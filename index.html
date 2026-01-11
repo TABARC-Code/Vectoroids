@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Vecteroids | Tabarc-Code</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="A casual vector-style arcade game inspired by classic Asteroids. Green CRT vibes, shattering rocks, UFO trouble, and fast messy fun. Built by Tabarc-Code / Tabarc Design.">
+<meta name="author" content="Tabarc-Code, Tabarc Design">
+<meta name="keywords" content="vector arcade game, asteroids style, retro arcade, crt vector graphics, tabarc, tabarc-code, theacidbathandrestraintCo, acidbath, casual browser game, indie arcade, tabarc code, tabarc design">
+
+<link rel="canonical" href="https://vecteroids.neocities.org/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vecteroids | Tabarc-Code">
+<meta property="og:description" content="A casual vector-style arcade game inspired by classic Asteroids. Green CRT vibes, shattering rocks, UFO trouble, and fast messy fun.">
+<meta property="og:url" content="https://vecteroids.neocities.org/">
+<meta property="og:site_name" content="Tabarc-Code">
+<meta property="og:image" content="https://vecteroids.neocities.org/.branding/tabarc-icon.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vecteroids | Tabarc-Code">
+<meta name="twitter:description" content="Casual vector arcade chaos. No coins required.">
+<meta name="twitter:image" content="https://vecteroids.neocities.org/.branding/tabarc-icon.png">
+
+<meta name="theme-color" content="#00ff66">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="robots" content="index,follow">
+
+  <link rel="stylesheet" href="style.css">
+    <script defer src="audio.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body>
+<!-- <p align="center"> <img src=".branding/tabarc-icon.svg" width="180" alt="TABARC-Code Icon"> </p> -->
+
+  <div id="splash" role="dialog" aria-label="Start" class="attract">
+    <div class="attractFrame" aria-hidden="true"></div>
+
+    <div class="titleBlock">
+      <div class="gameTitle">VECTEROIDS</div>
+      <div class="subTitle">VECTOR COMBAT SIMULATION</div>
+    </div>
+
+    <div class="creditLine">© </div>
+
+    <div class="instructions">
+      <div class="line">1 PLAYER ONLY</div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line">H OR SHIFT </div>
+      <div class="line">P OR ESC PAUSE</div>
+    </div>
+
+    <div class="scorePanel">
+      <div class="panelTitle">HIGH SCORE</div>
+      <div class="panelValue" id="hiScoreSplash">000000</div>
+      <div class="panelHint">NEAR MISSES BUILD MULTIPLIER</div>
+    </div>
+
+    <button id="startBtn" class="startBtn" aria-label="Play" type="button" onclick="window.VO_START && window.VO_START()" >
+      <span class="icon" aria-hidden="true"></span>
+      <span class="label">PUSH TO START</span>
+    </button>
+
+    <div class="hint">Tap to start on mobile.</div>
+  </div>
+<div id="hudOverlay" class="hudOverlay" aria-hidden="true">
+    <div id="upgradeCard" class="upgradeCard" style="display:none">
+      <div class="upgradeTitle">UPGRADE PICK</div>
+      <div id="upgradeSub" class="upgradeSub">Choose one. Keys 1, 2, 3 also work.</div>
+      <div id="upgradeOptions" class="upgradeOptions"></div>
+    </div>
+
+    <div id="paused" class="paused" style="display:none">PAUSED</div>
+  </div>
+
+  <canvas id="game" width="960" height="540"></canvas>
+
+
+  <div id="touchUI" aria-hidden="true">
+    <div class="touch-left">
+      <button class="tbtn" id="tLeft">◀</button>
+      <button class="tbtn" id="tThrust">▲</button>
+      <button class="tbtn" id="tRight">▶</button>
+    </div>
+    <div class="touch-right">
+      <button class="tbtn" id="tPause">II</button>
+      <button class="tbtn" id="tHyper">HYP</button>
+      <button class="tbtn </button>
+    </div>
+  </div>
+
+
+<div id="fatal" style="display:none"><div class="fatalTitle">ERROR</div><pre id="fatalText"></pre><div class="fatalHint">Refresh to restart</div></div>
+  <div id="audioDebug" style="display:none;position:fixed;left:10px;bottom:10px;z-index:99999;color:#f55;font:12px mono</div>
+
+<footer id="footer-links" style="
+  position:fixed;
+  left:0; right:0; bottom:8px;
+  text-align:center;
+  font-family:monospace;
+  font-size:12px;
+  color:#0f0;
+  opacity:0.7;
+  pointer-events:auto;
+">
+  <a href="#" style="color:#0f0; margin:0 12px; text-decoration:none;">
+    LINK_ONE_PLACEHOLDER
+  </a>
+  <a href="#" style="color:#0f0; margin:0 12px; text-decoration:none;">
+    LINK_TWO_PLACEHOLDER
+  </a>
+</footer>
+
+</body>
+</html>
